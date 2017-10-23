@@ -7,4 +7,12 @@ import android.support.v4.app.Fragment;
  */
 
 public class BodyPartFragment extends Fragment {
+
+//    Empty constructor
+    public BodyPartFragment(){
+
+    }
+
+
+
 }
