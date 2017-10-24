@@ -41,8 +41,9 @@ public class AndroidMeActivity extends AppCompatActivity {
                 .add(R.id.head_container, headFragment)
                 .commit();
 
-        BodyPartFragment bodyFragment = new BodyPartFragment();
 
+        // Create and display the body BodyPartFragments
+        BodyPartFragment bodyFragment = new BodyPartFragment();
         bodyFragment.setImageIds(AndroidImageAssets.getBodies());
         bodyFragment.setListIndex(1);
 
@@ -51,8 +52,9 @@ public class AndroidMeActivity extends AppCompatActivity {
                 .add(R.id.body_container, bodyFragment)
                 .commit();
 
-        BodyPartFragment legFragment = new BodyPartFragment();
 
+        // Create and display the Leg BodyPartFragments
+        BodyPartFragment legFragment = new BodyPartFragment();
         legFragment.setImageIds(AndroidImageAssets.getLegs());
         legFragment.setListIndex(1);
 
