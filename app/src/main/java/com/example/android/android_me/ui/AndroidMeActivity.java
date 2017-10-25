@@ -31,37 +31,40 @@ public class AndroidMeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_android_me);
 
-        BodyPartFragment headFragment = new BodyPartFragment();
+        if(savedInstanceState == null) {
 
-        headFragment.setImageIds(AndroidImageAssets.getHeads());
-        headFragment.setListIndex(1);
+            BodyPartFragment headFragment = new BodyPartFragment();
 
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        fragmentManager.beginTransaction()
-                .add(R.id.head_container, headFragment)
-                .commit();
+            headFragment.setImageIds(AndroidImageAssets.getHeads());
+            headFragment.setListIndex(1);
 
-
-        // Create and display the body BodyPartFragments
-        BodyPartFragment bodyFragment = new BodyPartFragment();
-        bodyFragment.setImageIds(AndroidImageAssets.getBodies());
-        bodyFragment.setListIndex(1);
-
-        FragmentManager fragmentManager2 = getSupportFragmentManager();
-        fragmentManager2.beginTransaction()
-                .add(R.id.body_container, bodyFragment)
-                .commit();
+            FragmentManager fragmentManager = getSupportFragmentManager();
+            fragmentManager.beginTransaction()
+                    .add(R.id.head_container, headFragment)
+                    .commit();
 
 
-        // Create and display the Leg BodyPartFragments
-        BodyPartFragment legFragment = new BodyPartFragment();
-        legFragment.setImageIds(AndroidImageAssets.getLegs());
-        legFragment.setListIndex(1);
+            // Create and display the body BodyPartFragments
+            BodyPartFragment bodyFragment = new BodyPartFragment();
+            bodyFragment.setImageIds(AndroidImageAssets.getBodies());
+            bodyFragment.setListIndex(1);
 
-        FragmentManager fragmentManager3= getSupportFragmentManager();
-        fragmentManager3.beginTransaction()
-                .add(R.id.leg_container, legFragment)
-                .commit();
+            FragmentManager fragmentManager2 = getSupportFragmentManager();
+            fragmentManager2.beginTransaction()
+                    .add(R.id.body_container, bodyFragment)
+                    .commit();
 
-    }
+
+            // Create and display the Leg BodyPartFragments
+            BodyPartFragment legFragment = new BodyPartFragment();
+            legFragment.setImageIds(AndroidImageAssets.getLegs());
+            legFragment.setListIndex(1);
+
+            FragmentManager fragmentManager3 = getSupportFragmentManager();
+            fragmentManager3.beginTransaction()
+                    .add(R.id.leg_container, legFragment)
+                    .commit();
+
+        }
+        }
 }
